@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>imdb</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<meta charset="utf-8" />
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<img class="" src="images\header.jpg" width="80px" height="80px">
+  		<a class="navbar-brand" href="#">IMDB</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="		navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+
+ 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item active" id="homepage">
+       			 	<a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+     			</li>
+          <li class="nav-item active rmvdsp" id="goback">
+              <a class="nav-link" href="index.html">Go back<span class="sr-only">(current)</span></a>
+          </li>
+      			
+      	
+      
+    		</ul>
+    		<form class="form-inline my-2 my-lg-0">
+      			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+   			 </form>
+  		</div>
+	</nav>
+
+	
+<h3 style="background-color: black;color: white;text-align: center;" id="movieheading" >Welcome to movie search</h3>
+
+<form id="forms">
+  <div class="form-group" id="btn1">
+    <label for="exampleInputEmail1">Title</label>
+    <input type="text" class="form-control" id="exampleInputtitle1" aria-describedby="emailHelp" placeholder="Enter title">
+    <button type="button" class="btn btn-primary" id="searchByTitle">SearchByTitle</button>
+  </div>
+  <div class="form-group" id="btn2">
+     <label for="exampleInputEmail1">ID</label>
+    <input type="text" class="form-control" id="exampleInputId1" aria-describedby="emailHelp" placeholder="Enter id">
+    <button type="button" class="btn btn-primary" id="searchById">SearchById</button>
+  </div>
+  <div class="form-group" id="btn3">
+     <label for="exampleInputEmail1">Title</label>
+    <input type="text" class="form-control" id="exampleInputtitle2" aria-describedby="emailHelp" placeholder="Enter title">
+   
+    <label for="exampleInputEmail1">Year</label>
+    <input type="text" class="form-control" id="exampleInputYear2" aria-describedby="emailHelp" placeholder="Enter year">
+    <button type="button" class="btn btn-primary"id="searchByBoth">SearchByBoth</button>
+  </div>
+</form>
+
+<!--  ///////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="rmvdsp" id="movienotfound">
+  <h2>The movie is not in records</h2>
+</div>
+
+<div class="rmvdsp" id="movieview" style="background-color: black;box-sizing: border-box;">
+  <div class="container card-body cards" style="background-color: black;">
+    <div class="row">
+      <div class="col-lg-4 col-md-5 col-sm-10 box">
+        <div class="card-img-left image " style=""></div>
+      </div>
+      <div class="col-lg-4 col-md-7 col-sm-10 box" style="">
+        <h1 style="color:white;"><span class="moviename"></span></h1><br>
+        <h4 style="color: white;">StoryLine:<span class="shortdesc"></span></h4>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-10 box accors">
+        <div id="accordion" class="" style="">
+          <div class="card" style="font-weight: bold;">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="">
+                  Info
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <div style=" padding:0px;margin:0px;">
+                  <ul style="list-style-type: none; font-size: 20px;background-color: white;color:black;border-radius: 5px;padding:0px;margin:0px;">
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;;">Genre:<span class="genre"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;">Released:<span class="released"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;">Year:<span class="year"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;">RunTime:<span class="runtime"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;">IMDB Rating:<span class="rating"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;">IMDB Id:<span class="imdbid"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;">Rating:<span class="ratings"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Cast
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <div style=" padding:0px;margin:0px;">
+                  <ul style="list-style-type: none; font-size: 20px;background-color: white;color:black;border-radius: 5px;padding:0px;margin:0px;font-weight: bold;">
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Actors:<span class="actors"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Directors:<span class="directors"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Writer:<span class="writer"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Production:<span class="production"></span></li>
+            
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Others
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="card-body">
+                <div style=" padding:0px;margin:0px;">
+                  <ul style="list-style-type: none; font-size: 20px;background-color: white;color:black;border-radius: 5px;padding:0px;margin:0px;font-weight: bold;">
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Language:<span class="language"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Awards:<span class="awards"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Country:<span class="country"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Type:<span class="type"></span></li>
+                    <li style="border-bottom: solid 1px grey;padding-left: 20px;" >Box Office:<span class="boxoffice"></span></li>
+            
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  </div>   
+</div>
+<div class="footer bg-dark" style="width:100%; height:100px;">
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

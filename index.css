@@ -1,0 +1,21 @@
+.rmvdsp{
+	display: none;
+}
+
+
+
+@media screen and (max-width: 767px){
+
+	.box{
+		margin-top:20px;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width: 991px){
+
+	.accors{
+		margin-top:20px;
+	}
+	
+	
+}
