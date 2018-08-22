@@ -55,7 +55,7 @@ let getAllDetails=()=>{
     let var3=$("#exampleInputtitle2").val();
     let var4=$("#exampleInputYear2").val();
 
-    let url='http://www.omdbapi.com/?';
+    let url='https://www.omdbapi.com/?';
     let apikey='&apikey=3e97c69';
    
     if(title!=""){
